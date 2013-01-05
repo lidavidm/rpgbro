@@ -8,14 +8,18 @@ import com.badlogic.gdx.math.Rectangle;
 import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.Screen;
 
+import com.lithiumli.rpgbro.RPGBroGame;
+
 public class LithiumScreen implements Screen {
     protected SpriteBatch spriteBatch;
     protected OrthographicCamera camera;
     protected Rectangle viewport;
     protected static final int WIDTH = 320;
     protected static final int HEIGHT = 320;
+    protected RPGBroGame game;
 
-    public LithiumScreen() {
+    public LithiumScreen(RPGBroGame g) {
+        game = g;
         spriteBatch = new SpriteBatch();
 
         camera = new OrthographicCamera();
@@ -29,10 +33,10 @@ public class LithiumScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         camera.update();
         Gdx.gl.glViewport((int) viewport.x, (int) viewport.y,
                           (int) viewport.width, (int) viewport.height);
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
     }
 
     @Override
