@@ -7,7 +7,6 @@ import com.badlogic.gdx.graphics.GL10;
 import com.badlogic.gdx.graphics.OrthographicCamera;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
-import com.badlogic.gdx.scenes.scene2d.Actor;
 import com.badlogic.gdx.scenes.scene2d.Stage;
 import com.badlogic.gdx.scenes.scene2d.ui.*;
 
@@ -15,15 +14,12 @@ import com.lithiumli.rpgbro.RPGBroGame;
 
 public class TitleScreen extends LithiumScreen {
     private BitmapFont font;
-    private Stage stage;
-    private Actor root;
-
     public TitleScreen(RPGBroGame g) {
         super(g);
         font = new BitmapFont(Gdx.files.internal("assets/pts_r.fnt"),
                               Gdx.files.internal("assets/pts_r.png"), false);
 
-        stage = new Stage();
+        Stage stage = g.getStage();
         Gdx.input.setInputProcessor(stage);
 
         Table table = new Table();
@@ -60,10 +56,6 @@ public class TitleScreen extends LithiumScreen {
 		// font.draw(spriteBatch, text, 240 - width / 2, 128);
 
         // spriteBatch.end();
-
-        stage.act(delta);
-        stage.draw();
-        Table.drawDebug(stage);
     }
 
     @Override

@@ -25,6 +25,8 @@ public class LithiumScreen implements Screen {
         camera = new OrthographicCamera();
         camera.setToOrtho(false, WIDTH, HEIGHT);
         camera.update(true);
+
+        viewport = new Rectangle(0, 0, 320, 320);
     }
 
     @Override
@@ -33,7 +35,6 @@ public class LithiumScreen implements Screen {
 
     @Override
     public void render(float delta) {
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
         camera.update();
         Gdx.gl.glViewport((int) viewport.x, (int) viewport.y,
                           (int) viewport.width, (int) viewport.height);
@@ -59,7 +60,7 @@ public class LithiumScreen implements Screen {
 
         float w = (float) WIDTH * scale;
         float h = (float) HEIGHT * scale;
-        viewport = new Rectangle(crop.x, crop.y, w, h);
+        viewport.set(crop.x, crop.y, w, h);
     }
 
     @Override
