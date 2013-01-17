@@ -35,6 +35,10 @@ public class LithiumScreen implements Screen {
 
     @Override
     public void render(float delta) {
+        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
+    }
+
+    protected void switchToContentViewport() {
         camera.update();
         Gdx.gl.glViewport((int) viewport.x, (int) viewport.y,
                           (int) viewport.width, (int) viewport.height);

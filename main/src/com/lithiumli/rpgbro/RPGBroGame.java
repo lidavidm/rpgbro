@@ -20,16 +20,10 @@ public class RPGBroGame extends Game {
         this.setScreen(screen);
     }
 
-    @Override
-    public void render() {
-        Gdx.gl.glClear(GL10.GL_COLOR_BUFFER_BIT);
-
+    public void renderStage() {
         Gdx.gl.glViewport(0, 0, width, height);
         stage.act(Gdx.graphics.getDeltaTime());
         stage.draw();
-        // Table.drawDebug(stage);
-
-        super.render();
     }
 
     @Override
