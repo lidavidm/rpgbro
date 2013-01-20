@@ -14,8 +14,8 @@ public class LithiumScreen implements Screen {
     protected SpriteBatch spriteBatch;
     protected OrthographicCamera camera;
     protected Rectangle viewport;
-    protected static final int WIDTH = 320;
-    protected static final int HEIGHT = 320;
+    protected static final int WIDTH = 640;
+    protected static final int HEIGHT = 640;
     protected RPGBroGame game;
 
     public LithiumScreen(RPGBroGame g) {
@@ -26,7 +26,7 @@ public class LithiumScreen implements Screen {
         camera.setToOrtho(false, WIDTH, HEIGHT);
         camera.update(true);
 
-        viewport = new Rectangle(0, 0, 320, 320);
+        viewport = new Rectangle(0, 0, 640, 640);
     }
 
     @Override

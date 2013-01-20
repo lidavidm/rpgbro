@@ -61,14 +61,6 @@ public class TitleScreen extends LithiumScreen {
         game.renderStage();
 
         switchToContentViewport();
-        // spriteBatch.setProjectionMatrix(camera.combined);
-        // spriteBatch.begin();
-
-        // String text = "Touch screen to start!";
-		// float width = font.getBounds(text).width;
-		// font.draw(spriteBatch, text, 240 - width / 2, 128);
-
-        // spriteBatch.end();
     }
 
     @Override
